@@ -1,4 +1,3 @@
-# 💤 LazyVim
+# Personal config
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+This is a personal config based on [typecraft's nerd starter course](https://www.youtube.com/watch?v=zHTeCSVAFNY&ab_channel=typecraft).
