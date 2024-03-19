@@ -33,7 +33,7 @@ return {
         bind_to_cwd = true,
       },
     })
-    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", {})
-    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", { desc = "Show file explorer" })
+    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { desc = "Show active buffers" })
   end,
 }
