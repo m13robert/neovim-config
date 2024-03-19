@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("lazy").setup({
   spec = {
-    { "LazyVim/LazyVim",                           import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.util.gitui" },
+    -- { "LazyVim/LazyVim",                           import = "lazyvim.plugins" },
+    -- { import = "lazyvim.plugins.extras.util.gitui" },
     { import = "plugins" },
   },
 })
