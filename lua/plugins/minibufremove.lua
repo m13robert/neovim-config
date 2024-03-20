@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.bufremove",
+  "chasnovski/mini.bufremove",
 
   keys = {
     {
