@@ -6,6 +6,22 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  keys = {
+    {
+      "<leader>e",
+      function()
+        require("neo-tree.command").execute({ toggle = true })
+      end,
+      desc = "Explorer NeoTree (root dir)",
+    },
+    {
+      "<leader>be",
+      function()
+        require("neo-tree.command").execute({ source = "buffers", toggle = true })
+      end,
+      desc = "Buffer explorer",
+    },
+  },
   deactivate = function()
     vim.cmd([[Neotree close]])
   end,
@@ -74,7 +90,5 @@ return {
         bind_to_cwd = true,
       },
     })
-    vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", { desc = "Show file explorer" })
-    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { desc = "Show active buffers" })
   end,
 }
