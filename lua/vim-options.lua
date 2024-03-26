@@ -5,14 +5,16 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 
+vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum} "
+
 -- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
-vim.wo.number = true
+-- vim.wo.number = true
 
 -- Options
 
