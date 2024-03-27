@@ -9,6 +9,12 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
       })
-    end
-  }
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 }
