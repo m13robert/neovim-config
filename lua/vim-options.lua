@@ -5,9 +5,6 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 
-vim.opt.numberwidth = 3
-vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
-
 -- Navigate vim panes better
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
@@ -15,7 +12,9 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = tr
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
--- vim.wo.number = true
+
+-- vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum} "
+vim.wo.number = true
 
 -- Options
 
