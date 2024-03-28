@@ -3,6 +3,9 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  keys = {
+    { "<leader>h", "", desc = "Harpoon controls" },
+  },
   config = function()
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
