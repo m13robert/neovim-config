@@ -11,15 +11,19 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
-
 -- vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum} "
-vim.wo.number = true
+-- vim.wo.number = true
 
 -- Options
 
 vim.g.autoformat = true
 local opt = vim.opt
+
+-- line numbers
+opt.relativenumber = true -- show relative line numbers
+opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- autoformatt on save
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -137,3 +141,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.conceallevel = 0
   end,
 })
+
+-- turn off swapfile
+opt.swapfile = false
