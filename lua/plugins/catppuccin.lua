@@ -1,11 +1,19 @@
 return {
+  -- {
+  --   "catppuccin/nvim",
+  --   lazy = false,
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme "catppuccin-mocha"
+  --   end
+  -- }
   {
-    "catppuccin/nvim",
+    "polirritmico/monokai-nightasty.nvim",
     lazy = false,
-    name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "catppuccin-mocha"
-    end
-  }
+      vim.cmd.colorscheme("monokai-nightasty")
+    end,
+  },
 }
