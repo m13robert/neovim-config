@@ -16,7 +16,7 @@ return {
     wk.register({
       f = {
         name = "File", -- optional group name
-        f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+        -- f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
       },
       d = {
         name = "Debugging",
