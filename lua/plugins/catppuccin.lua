@@ -8,12 +8,21 @@ return {
   --     vim.cmd.colorscheme "catppuccin-mocha"
   --   end
   -- }
+  -- {
+  --   "polirritmico/monokai-nightasty.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("monokai-nightasty")
+  --   end,
+  -- },
   {
-    "polirritmico/monokai-nightasty.nvim",
+    "nobbmaestro/nvim-andromeda",
+    dependencies = { "tjdevries/colorbuddy.nvim", branch = "dev" },
     lazy = false,
-    priority = 1000,
+    name = "andromeda",
     config = function()
-      vim.cmd.colorscheme("monokai-nightasty")
+      require("andromeda").setup()
     end,
   },
 }
