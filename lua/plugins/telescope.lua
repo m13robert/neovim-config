@@ -61,8 +61,8 @@ return {
         extensions = extensions,
       })
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-      vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "Grep" })
+      vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+      vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Grep" })
 
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("fzf")
