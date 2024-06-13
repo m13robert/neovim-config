@@ -23,6 +23,7 @@ return {
     name = "andromeda",
     config = function()
       require("andromeda").setup()
+      vim.cmd.colorscheme("andromeda")
     end,
   },
 }
