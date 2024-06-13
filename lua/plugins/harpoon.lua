@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  lazy = false,
   keys = {
     { "<leader>h", "", desc = "Harpoon controls" },
   },
@@ -29,5 +30,11 @@ return {
       "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
       { desc = "Open quick menu" }
     )
+
+    require("harpoon").setup({
+      menu = {
+        width = vim.api.nvim_win_get_width(0) - 6,
+      },
+    })
   end,
 }

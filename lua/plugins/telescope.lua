@@ -1,18 +1,22 @@
 return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
+    lazy = false,
   },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
+    lazy = "false",
     cmd = "Telescope",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
+        lazy = false,
       },
       {
         "jemag/telescope-diff.nvim",
+        lazy = false,
         dependencies = {
           { "nvim-telescope/telescope.nvim" },
         },
