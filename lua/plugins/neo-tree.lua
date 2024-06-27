@@ -89,6 +89,9 @@ return {
       buffers = {
         bind_to_cwd = true,
       },
+      window = {
+        position = "right",
+      },
     })
   end,
 }
