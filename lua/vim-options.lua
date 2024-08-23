@@ -4,8 +4,8 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.Lex)
-
+vim.g.netrw_keepdir = 0
+vim.keymap.set("n", "<leader>e", vim.cmd.Lex, { desc = "File explorer" })
 -- Hardtime.nvim
 vim.showmode = false
 
