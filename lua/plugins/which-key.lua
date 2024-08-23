@@ -1,6 +1,10 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
+  dependencies = {
+    "echasnovski/mini.icons",
+    "nvim-tree/nvim-web-devicons",
+  },
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
@@ -9,36 +13,16 @@ return {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
+    preset = "modern",
   },
-  config = function()
-    local wk = require("which-key")
-
-    wk.register({
-      f = {
-        name = "File", -- optional group name
-        -- f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-      },
-      d = {
-        name = "Debugging",
-      },
-      c = {
-        name = "Code",
-      },
-      b = {
-        name = "Buffer",
-      },
-      g = {
-        name = "Git",
-      },
-      r = {
-        name = "Lsp",
-      },
-      q = {
-        name = "Session management",
-      },
-      n = {
-        name = "Noice",
-      },
-    }, { prefix = "<leader>" })
-  end,
+  keys = {
+    { "<leader>f", "", desc = "Find file", mode = "n" },
+    { "<leader>d", "", desc = "Debugging" },
+    { "<leader>c", "", desc = "Code" },
+    { "<leader>b", "", desc = "Buffer" },
+    { "<leader>g", "", desc = "Git" },
+    { "<leader>r", "", desc = "LSP" },
+    { "<leader>q", "", desc = "Session management" },
+    { "<leader>n", "", desc = "Noice" },
+  },
 }
