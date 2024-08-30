@@ -42,16 +42,16 @@ return {
           path_display = { "truncate" },
           layout_config = {
             width = 0.9,
-            -- prompt_position = "top",
-            -- horizontal = { mirror = true },
-            -- vertical = { mirror = true },
+            prompt_position = "top",
+            horizontal = { mirror = true },
+            vertical = { mirror = true },
           },
           lsp_references = {
             fname_width = 80,
           },
           -- layout_strategy = "vertical",
           -- winblend = 0,
-          -- selection_strategy = "reset",
+          selection_strategy = "reset",
           -- sorting_strategy = "ascending",
           -- dynamic_preview_title = true,
           -- path_display = { "smart" },
@@ -65,8 +65,24 @@ return {
         extensions = extensions,
       })
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-      vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Grep" })
+      local utils = require("telescope.utils")
+      vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>ff", function()
+        builtin.find_files({ cwd = false })
+      end, { desc = "Find files" })
+      vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "Grep" })
+      vim.keymap.set("n", "<leader>pws", function()
+        local word = vim.fn.expand("<cword>")
+        builtin.grep_string({ search = word })
+      end)
+      vim.keymap.set("n", "<leader>pWs", function()
+        local word = vim.fn.expand("<cWORD>")
+        builtin.grep_string({ search = word })
+      end, { desc = "" })
+      vim.keymap.set("n", "<leader>ps", function()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      end)
+      vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("fzf")
