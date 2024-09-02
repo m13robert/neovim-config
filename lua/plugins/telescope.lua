@@ -61,6 +61,15 @@ return {
           lsp_references = {
             fname_width = 120,
           },
+          buffers = {
+            show_all_buffers = true,
+            sort_mru = true,
+            mappings = {
+              i = {
+                ["<c-r>"] = "delete_buffer",
+              },
+            },
+          },
         },
         extensions = extensions,
       })

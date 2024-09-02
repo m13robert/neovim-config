@@ -171,8 +171,8 @@ return {
       --   opts.desc = "Go to declaration"
       --   keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
       --
-      --   keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format file" })
-      --
+      keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format file" })
+
       opts.desc = "Show LSP definitions"
       keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
       --
