@@ -5,7 +5,8 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 vim.g.netrw_keepdir = 0
-vim.keymap.set("n", "<leader>e", vim.cmd.Lex, { desc = "File explorer" })
+-- vim.keymap.set("n", "<leader>e", "<cmd>Lex!<cr>", { desc = "File explorer" })
+
 -- Hardtime.nvim
 vim.showmode = false
 
@@ -18,6 +19,9 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = tr
 -- switch to other buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
+vim.keymap.set("n", "<C-H>", "<cmd>vertical resize -20<cr>", {})
+vim.keymap.set("n", "<C-L>", "<cmd>vertical resize +20<cr>", {})
+
 -- vim.opt.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum} "
 -- vim.wo.number = true
 
@@ -25,7 +29,7 @@ vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buff
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
-vim.g.autoformat = true
+-- vim.g.autoformat = true
 local opt = vim.opt
 
 -- ignore case when searching
@@ -69,13 +73,13 @@ opt.number = true -- shows absolute line number on cursor line (when relative nu
 
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
--- autoformatt on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  buffer = buffer,
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end,
-})
+-- -- autoformatt on save
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   buffer = buffer,
+--   callback = function()
+--     vim.lsp.buf.format({ async = false })
+--   end,
+-- })
 
 opt.autowrite = true -- Enable auto write
 if vim.fn.has("nvim-0.10") == 1 then
