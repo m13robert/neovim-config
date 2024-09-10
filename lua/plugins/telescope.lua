@@ -47,7 +47,7 @@ return {
             vertical = { mirror = true },
           },
           lsp_references = {
-            fname_width = 80,
+            fname_width = 90,
           },
           -- layout_strategy = "vertical",
           -- winblend = 0,
@@ -76,6 +76,7 @@ return {
       local builtin = require("telescope.builtin")
       local utils = require("telescope.utils")
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Git files" })
       vim.keymap.set("n", "<leader>ff", function()
         builtin.find_files({ cwd = false })
       end, { desc = "Find files" })

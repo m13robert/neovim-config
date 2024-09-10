@@ -82,7 +82,7 @@ return {
       function()
         return "▊"
       end,
-      color = { fg = colors.blue }, -- Sets highlighting of component
+      color = { fg = colors.orange }, -- Sets highlighting of component
       padding = { left = 0, right = 1 }, -- We don't need space before this
     })
 
