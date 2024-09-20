@@ -23,6 +23,5 @@ return {
     { "<leader>g", "", desc = "Git" },
     { "<leader>r", "", desc = "LSP" },
     { "<leader>q", "", desc = "Session management" },
-    { "<leader>n", "", desc = "Noice" },
   },
 }
