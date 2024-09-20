@@ -92,7 +92,7 @@ return {
       vim.keymap.set("n", "<leader>ps", function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end, { desc = "Grep keyword" })
-      vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+      vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Help tags" })
 
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("fzf")
